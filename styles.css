@@ -238,7 +238,10 @@ h1, h2, h3, h4 { line-height: 1.12; margin: 0; font-weight: 800; letter-spacing:
   .nav-toggle { display: flex; }
   .nav-actions .btn-sm { display: none; }
   .hero-grid, .cf-grid, .cov-grid, .faq-grid { grid-template-columns: 1fr; }
+  .hero { padding: 24px 0 56px; }
+  .hero-grid { gap: 12px; }
   .hero-media { order: -1; }
+  .hero-media img { max-height: 300px; width: auto; }
   .cov-media { max-width: 420px; margin-inline: auto; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .test-grid { grid-template-columns: 1fr; }
@@ -247,9 +250,39 @@ h1, h2, h3, h4 { line-height: 1.12; margin: 0; font-weight: 800; letter-spacing:
 }
 @media (max-width: 560px) {
   .cards-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 56px 0; }
+  .container { width: min(100% - 32px, var(--maxw)); }
+
+  /* Hero compacto y legible en móvil */
+  .hero { padding: 16px 0 48px; }
+  .hero h1 { font-size: clamp(2.3rem, 11vw, 3rem); margin-bottom: 16px; }
+  .hero .lead { margin-bottom: 22px; }
+  .hero-media img { max-height: 250px; }
+
+  /* Badges como tarjetas apiladas, fáciles de leer */
+  .hero-badges { flex-direction: column; gap: 10px; margin-bottom: 26px; }
+  .hero-badges li {
+    width: 100%; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .hero-badges br { display: none; }
+  .hero-badges li > span:last-child { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+
+  /* Botones grandes y full-width (mejor toque) */
+  .hero-cta { width: 100%; gap: 12px; }
+  .hero-cta .btn, .cf-copy .btn, .cta-copy .btn { width: 100%; justify-content: center; }
+  .btn { padding: 15px 24px; }
+
+  /* Espaciados y tipografías ajustadas */
+  .section-title { margin-bottom: 34px; }
+  .stats { gap: 16px 22px; }
+  .cta-banner { padding: 32px 22px; border-radius: 20px; }
+  .contact-card { padding: 24px 20px; }
+}
+@media (max-width: 380px) {
   .footer-grid { grid-template-columns: 1fr; }
-  .hero-badges { gap: 18px; }
-  .section { padding: 60px 0; }
+  .hero h1 { font-size: 2.15rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto; }
