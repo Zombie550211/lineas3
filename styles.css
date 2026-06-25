@@ -266,6 +266,48 @@ svg { display: block; }
 .legal a { color: var(--violet); }
 .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--violet); font-weight: 700; margin-bottom: 30px; }
 
+/* ===================== PLANES ===================== */
+.eyebrow.center { text-align: center; }
+.planes { background: var(--bg-2); }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; max-width: 980px; margin-inline: auto; }
+.plan-card {
+  position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 34px 26px 28px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+}
+.plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.plan-card.featured { border-color: var(--violet); box-shadow: 0 22px 48px rgba(111, 75, 255, 0.28); transform: scale(1.04); }
+.plan-card.featured:hover { transform: scale(1.04) translateY(-6px); }
+.plan-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--grad-btn); color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+  padding: 6px 16px; border-radius: 999px; box-shadow: var(--shadow-violet); white-space: nowrap;
+}
+.plan-card h3 { font-size: 1.3rem; margin: 8px 0; text-align: center; }
+.plan-price { text-align: center; font-size: 2.9rem; font-weight: 800; color: var(--text); line-height: 1; }
+.plan-price .currency { font-size: 1.4rem; vertical-align: super; color: var(--violet); margin-right: 2px; }
+.plan-price .per { display: block; font-size: 0.78rem; font-weight: 600; color: var(--muted); margin-top: 10px; letter-spacing: 0.02em; }
+.plan-features { list-style: none; padding: 24px 0; margin: 22px 0; display: grid; gap: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.plan-features li { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--text-2); font-weight: 500; }
+.pcheck { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--panel-2); color: var(--violet); flex: none; }
+.pcheck svg { width: 12px; height: 12px; }
+.plan-card .btn { margin-top: auto; }
+.plans-highlights { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 38px; }
+.plans-highlights div { display: flex; align-items: center; gap: 10px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 999px; padding: 11px 20px; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.plans-highlights svg { width: 18px; height: 18px; color: var(--violet); flex: none; }
+
+/* ===================== BOTÓN FLOTANTE LLAMAR ===================== */
+.call-fab {
+  position: fixed; z-index: 60; right: 24px; bottom: 24px;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--grad-btn); color: #fff; font-weight: 700; font-size: 0.95rem;
+  padding: 14px 24px; border-radius: 999px; box-shadow: 0 12px 30px rgba(111, 75, 255, 0.5);
+  transition: transform .18s, box-shadow .18s; animation: callPulse 2.6s ease-in-out infinite;
+}
+.call-fab:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(111, 75, 255, 0.62); }
+.call-fab svg { width: 20px; height: 20px; }
+@keyframes callPulse { 0%, 100% { box-shadow: 0 12px 30px rgba(111, 75, 255, 0.45); } 50% { box-shadow: 0 12px 40px rgba(111, 75, 255, 0.78); } }
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1000px) {
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -285,6 +327,9 @@ svg { display: block; }
   .nav-toggle { display: flex; }
   .nav-actions .btn-sm { display: none; }
   .cf-grid, .faq-grid { grid-template-columns: 1fr; }
+  .plans-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .plan-card.featured { transform: none; order: -1; }
+  .plan-card.featured:hover { transform: translateY(-6px); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .test-grid { grid-template-columns: 1fr; }
   .cta-banner {
@@ -320,6 +365,10 @@ svg { display: block; }
   .cta-inner { padding: 32px 22px; }
   .cta-list { grid-template-columns: 1fr; }
   .contact-card { padding: 24px 20px; }
+
+  /* Botón flotante centrado y ancho en móvil */
+  .call-fab { left: 16px; right: 16px; bottom: 16px; justify-content: center; padding: 16px 24px; font-size: 1rem; }
+  .site-footer { padding-bottom: 96px; }
 }
 @media (max-width: 380px) {
   .footer-grid { grid-template-columns: 1fr; }
@@ -328,6 +377,6 @@ svg { display: block; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .cf-media img, .hero::before, .hero::after { animation: none !important; }
+  .cf-media img, .hero::before, .hero::after, .call-fab { animation: none !important; }
   .btn:hover, .feature-card:hover, .test-card:hover, .stats div:hover { transform: none; }
 }

@@ -85,7 +85,8 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
   // Elementos individuales que aparecen al entrar en pantalla
   const revealSelectors = [
     '.hero-copy > *', '.section-title', '.feature-card',
-    '.cf-copy', '.cf-media', '.cov-copy > *', '.stats div',
+    '.plan-card', '.plans-highlights div',
+    '.cf-copy', '.steps li', '.cov-copy > *', '.stats div',
     '.test-head > *', '.test-card', '.cta-banner', '.faq details', '.contact-card',
   ];
   const revealEls = document.querySelectorAll(revealSelectors.join(','));
@@ -101,6 +102,8 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
     });
   };
   stagger('.cards-grid', '.feature-card');
+  stagger('.plans-grid', '.plan-card');
+  stagger('.steps', 'li');
   stagger('.test-grid', '.test-card');
   stagger('.cobertura .stats', 'div');
   stagger('.hero-copy', '*');
