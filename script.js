@@ -84,7 +84,8 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 if (!prefersReduced && 'IntersectionObserver' in window) {
   // Elementos individuales que aparecen al entrar en pantalla
   const revealSelectors = [
-    '.hero-copy > *', '.section-title', '.feature-card',
+    '.hero-copy > *', '.hero-media', '.section-title', '.feature-card',
+    '.trust-item', '.connect-bar',
     '.plan-card', '.plans-highlights div',
     '.cf-copy', '.steps li', '.cov-copy > *', '.stats div',
     '.test-head > *', '.test-card', '.cta-banner', '.faq details', '.contact-card',
