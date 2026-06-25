@@ -194,19 +194,21 @@ svg { display: block; }
 .cta-final { background: var(--bg); }
 .cta-banner {
   position: relative; overflow: hidden;
-  border-radius: 26px; padding: 52px 48px;
-  background: linear-gradient(110deg, #4b21b3 0%, #6a2bc9 45%, #8a34d9 100%);
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; align-items: center;
+  border-radius: 26px; min-height: 360px;
+  background:
+    linear-gradient(100deg, #2c1474 0%, rgba(60, 30, 150, 0.78) 42%, rgba(70, 35, 170, 0.32) 64%, rgba(70, 35, 170, 0.05) 80%),
+    #2c1474 url("imagenes/mujer_celular.webp") right center / cover no-repeat;
+  display: flex; align-items: center;
   box-shadow: var(--shadow-lg); color: #fff;
 }
-.cta-banner::after { content: ""; position: absolute; width: 380px; height: 380px; border-radius: 50%; background: rgba(255,255,255,0.10); top: -160px; left: -80px; filter: blur(20px); }
+.cta-inner { position: relative; z-index: 2; padding: 52px 48px; max-width: 600px; display: grid; gap: 28px; }
 .cta-banner h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); margin-bottom: 26px; color: #fff; }
-.cta-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; position: relative; z-index: 2; }
+.cta-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
 .cta-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
-.check { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, 0.20); flex: none; }
+.check { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); flex: none; }
 .check svg { width: 14px; height: 14px; }
-.cta-img { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: 48%; object-fit: cover; opacity: 0.96; z-index: 1; border-radius: 0 26px 26px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 28%); mask-image: linear-gradient(90deg, transparent, #000 28%); }
-.cta-copy { position: relative; z-index: 2; }
+.cta-copy h2 { margin-bottom: 0; }
+.cta-copy .btn { margin-top: 26px; }
 
 /* ===================== PREGUNTAS / CONTACTO ===================== */
 .preguntas { background: var(--bg-2); }
@@ -285,8 +287,13 @@ svg { display: block; }
   .cf-grid, .faq-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .test-grid { grid-template-columns: 1fr; }
-  .cta-banner { grid-template-columns: 1fr; padding: 40px 30px; }
-  .cta-img { position: relative; max-width: 100%; height: auto; border-radius: 18px; margin-top: 20px; -webkit-mask-image: none; mask-image: none; }
+  .cta-banner {
+    min-height: auto;
+    background:
+      linear-gradient(180deg, rgba(34, 16, 92, 0.78) 0%, rgba(44, 20, 116, 0.88) 100%),
+      #2c1474 url("imagenes/mujer_celular.webp") center top / cover no-repeat;
+  }
+  .cta-inner { padding: 40px 30px; max-width: 100%; }
 }
 @media (max-width: 560px) {
   .cards-grid { grid-template-columns: 1fr; }
@@ -309,7 +316,9 @@ svg { display: block; }
 
   .section-title { margin-bottom: 34px; }
   .cobertura .stats { gap: 14px; }
-  .cta-banner { padding: 32px 22px; border-radius: 20px; }
+  .cta-banner { border-radius: 20px; }
+  .cta-inner { padding: 32px 22px; }
+  .cta-list { grid-template-columns: 1fr; }
   .contact-card { padding: 24px 20px; }
 }
 @media (max-width: 380px) {
