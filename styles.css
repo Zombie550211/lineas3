@@ -156,14 +156,15 @@ svg { display: block; }
 
 /* ===================== CÓMO FUNCIONA ===================== */
 .como-funciona { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
-.cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.cf-copy h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 34px; }
-.steps { list-style: none; padding: 0; margin: 0 0 34px; display: grid; gap: 26px; }
-.steps li { display: flex; gap: 18px; align-items: flex-start; }
+.cf-grid { display: block; }
+.cf-copy { text-align: center; max-width: 900px; margin-inline: auto; }
+.cf-copy h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 44px; }
+.steps { list-style: none; padding: 0; margin: 0 0 38px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; text-align: left; }
+.steps li { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); transition: transform .2s, box-shadow .2s; }
+.steps li:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .step-num { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: var(--grad-btn); color: #fff; box-shadow: var(--shadow-violet); }
 .steps h3 { font-size: 1.1rem; margin-bottom: 4px; }
 .steps p { color: var(--muted); margin: 0; font-size: 0.92rem; }
-.cf-media img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg); animation: floatY 6s ease-in-out infinite; }
 
 /* ===================== COBERTURA ===================== */
 .cobertura { background: var(--bg-2); }
