@@ -144,7 +144,7 @@ svg { display: block; }
 /* ===================== BENEFICIOS ===================== */
 .beneficios { background: var(--bg); }
 .cards-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
-.cards-grid.three { grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1000px; margin-inline: auto; }
+.cards-grid.three { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px; max-width: 1000px; margin-inline: auto; }
 .feature-card {
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 36px 28px; box-shadow: var(--shadow-sm);
