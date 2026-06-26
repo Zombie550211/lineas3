@@ -269,7 +269,7 @@ svg { display: block; }
 .site-footer { background: #0d0e1c; color: #c9cce6; border-top: 1px solid var(--line); padding: 56px 0 30px; }
 .site-footer .brand-name { color: #fff; }
 .site-footer .brand-mark { background: rgba(124, 92, 255, 0.16); border-color: rgba(124, 92, 255, 0.3); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; text-align: left; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; text-align: left; }
 .footer-brand p { color: #9396b8; font-size: 0.9rem; margin: 14px 0 0; max-width: 30ch; }
 .footer-social { display: flex; gap: 12px; margin-top: 18px; justify-content: flex-start; }
 .footer-social a { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.06); color: #c9cce6; transition: background .18s, transform .18s, color .18s; }
